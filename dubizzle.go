@@ -83,7 +83,7 @@ func parseHtml(page []byte) (*[]DubizzleResult, error) {
 				price = strings.TrimSpace(price)
 				price = strings.Trim(price, "<br>")
 				price = strings.TrimSpace(price)
-				url := title_info[0].Attribute("href")
+				url := title_info[0].Attribute("href").String()
 				ads = append(ads, DubizzleResult{Title: title, Price: price, Url: url})
 			}
 		}
